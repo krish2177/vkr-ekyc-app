@@ -23,7 +23,7 @@
     text-align: right;
     padding: 6PX;
     margin: 5px;
-    background-color: #ae285d;
+    background-color: #7c1cee;
     border-radius: 9px 9px 0px 9px;
 }
 
@@ -128,13 +128,13 @@ p:first-child {
 
     ::-webkit-scrollbar-thumb,
     .scrollbar-thumb {
-        background: #ae285d;
+        background: #7c1cee;
         border-radius: 4px;
     }
 
     ::-webkit-scrollbar-track,
     .scrollbar-thumb {
-        box-shadow: inset 0 0 4px #ae285d;
+        box-shadow: inset 0 0 4px #7c1cee;
         border-radius: 4px;
     }
 }
@@ -214,5 +214,5 @@ p:first-child {
 }
 
 .clearBtn {
-    background-color: #ae285d;
+    background-color: #7c1cee;
 }
