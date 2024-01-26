@@ -1,0 +1,95 @@
+.snap-container {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.list-unstyled {
+  list-style: none;
+}
+
+.list-unstyled li {
+  display: inline-block;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.video-container {
+  text-align: center;
+}
+
+.videowidth {
+  width: 350px;
+}
+
+@media screen and (min-device-width: 75px) and (max-device-width: 435px) {
+  .videopadding {
+    padding-left: 78px;
+  }
+
+  .videowidth {
+    width: 260px;
+  }
+}
+
+@media screen and (min-device-width: 436px) and (max-device-width: 575px) {
+  .videopadding {
+    padding-left: 190px;
+  }
+  .videowidth {
+    width: 425px;
+  }
+}
+
+@media screen and (min-device-width: 576px) and (max-device-width: 766px) {
+  .videopadding {
+    padding-left: 240px;
+  }
+  .videowidth {
+    width: 350px;
+  }
+}
+
+@media screen and (min-device-width: 767px) and (max-device-width: 960px) {
+  .videopadding {
+    padding-left: 390px;
+  }
+  .videowidth {
+    width: 600px;
+  }
+}
+
+@media screen and (min-device-width: 961px) and (max-device-width: 1200px) {
+  .videopadding {
+    padding-left: 540px;
+  }
+  .videowidth {
+    width: 650px;
+  }
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+  .videopadding {
+    padding-left: 540px;
+  }
+  .videowidth {
+    width: 700px;
+  }
+}
+
+@media screen and (min-device-width: 1400px) and (max-device-width: 1920px) {
+  .videopadding {
+    padding-left: 540px;
+  }
+  .videowidth {
+    width: 700px;
+  }
+}

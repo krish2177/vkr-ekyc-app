@@ -1,0 +1,194 @@
+<!-- <div class="container-fluid">
+    <div class=" row m-2" style="margin-right: 64%;">
+        <p class="h4-500 mt-5" style="margin-left: 160px;">
+            <button type="button" mat-fab color="accent" class="secHeader-fab" (click)="backToMain()">
+                <mat-icon>arrow_back</mat-icon>
+            </button> &nbsp;&nbsp; Schedule a call for later
+        </p>
+        <p class="mt-2 body1-500 mt-5 mb-4" style="margin-left: -6px;">Select date and time</p>
+    </div>
+    <div class=" row m-2" style="position: relative;right: 7%;">
+        <div class="col-6">
+            <div class="me-2" style="margin-left:369px;">
+                <mat-card class="demo-inline-calendar-card">
+                    <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)" color="accent"
+                        class="h-100"></mat-calendar>
+                </mat-card>
+            </div>
+        </div>
+        <div class="col-6" style="width: 728px;">
+            <mat-card class="ms-3 h-100">
+                <mat-card-title class=" mt-4 d-flex flex- row m-2 mx-auto" style="margin-bottom: -20px;">
+                    <i class="bi bi-chevron-left" style="padding-right: 260px;"></i>
+                    <p class="text-center body2-500"> Time slots</p>
+                    <i class="bi bi-chevron-right" style="padding-left: 260px;"></i>
+                </mat-card-title>
+                <hr>
+                <mat-card-content class="mx-auto">
+                    <div fxLayout="column" fxLayoutGap="">
+                        <div fxLayout=" row m-2" class="hstack gap-5 m-4">
+                            <button mat-stroked-button class="btn px-4 py-4 body2-500" (click)="gotoClose('10:00')">10:00
+                                am</button>
+                            <button mat-stroked-button class="btn px-4 py-4 body2-500" (click)="gotoClose('10:30')">10:30
+                                am</button>
+                            <button mat-stroked-button class="btn px-4 py-4 body2-500" (click)="gotoClose('11:00')">11:00
+                                am</button>
+                        </div>
+                        <div fxLayout=" row m-2" class="hstack gap-5 m-4">
+                            <button mat-stroked-button class="btn px-4 py-4 body2-500" (click)="gotoClose('11:30')">11:30
+                                am</button>
+                            <button mat-stroked-button class="btn px-4 py-4 body2-500" (click)="gotoClose('12:00')">12:00
+                                pm</button>
+                            <button mat-stroked-button class="btn px-4 py-4 body2-500" (click)="gotoClose('12:30')">12:30
+                                pm</button>
+                        </div>
+                        <div fxLayout=" row m-2" class="hstack gap-5 m-4">
+                            <button mat-stroked-button class="btn px-4 py-4 body2-500" (click)="gotoClose('01:00')">01:00
+                                pm</button>
+                            <button mat-stroked-button class="btn px-4 py-4 body2-500" (click)="gotoClose('01:30')">01:30
+                                pm</button>
+                            <button mat-stroked-button class="btn px-4 py-4 body2-500" (click)="gotoClose('02:00')">02:00
+                                pm</button>
+                        </div>
+                        <div fxLayout=" row m-2" class="hstack gap-5 m-4">
+                            <button mat-stroked-button class="btn px-4 py-4 body2-500" (click)="gotoClose('02:30')">02:30
+                                pm</button>
+                            <button mat-stroked-button class="btn px-4 py-4 body2-500" (click)="gotoClose('03:00')">03:00
+                                pm</button>
+                            <button mat-stroked-button class="btn px-4 py-4 body2-500" (click)="gotoClose('04:00')">04:00
+                                pm</button>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div> -->
+
+<div class="container-fluid">
+    <div class=" row m-2">
+        <div align="start">
+            <div class="m-2">
+                <p class="h4-500 mt-5">Schedule a call for later</p>
+                <p class="mt-2 body1-500 mt-5 mb-4" style="margin-left: -6px;">Select date and time</p>
+            </div>
+        </div>
+    </div>
+    <div class=" row m-2">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 mb-5">
+            <div class=" row" style="position: relative;">
+                <div>
+                    <mat-card class="demo-inline-calendar-card">
+                        <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)" color="accent"
+                            class="h-100"></mat-calendar>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 col-xxl-5 mb-5">
+            <mat-card class="ms-3 h-100">
+                <mat-card-header>
+                    <div align="start" class="col-xs-4 col-sm-4  col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                        <span><i class="bi bi-chevron-left"></i></span>
+                    </div>
+                    <div align="center" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                        <span>
+                            <p class="text-center body2-500"> Time slots</p>
+                        </span>
+                    </div>
+                    <div align="end" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                        <span><i class="bi bi-chevron-right"></i></span>
+                    </div>
+                </mat-card-header>
+                <hr>
+                <mat-card-content>
+                    <div class="row m-2 m-md-1 mb-md-4 mb-sm-4 mb-lg-2">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                            <button mat-stroked-button class="px-sm-3 py-sm-3 body2-500 mb-2"
+                                (click)="gotoClose('10:00')" style="width: 100%;">10:00
+                                am</button>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                            <button mat-stroked-button class="px-sm-3 py-sm-3 body2-500 mb-2"
+                                (click)="gotoClose('10:00')" style="width: 100%;">10:30
+                                am</button>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                            <button mat-stroked-button class="px-sm-3 py-sm-3 body2-500 mb-2"
+                                (click)="gotoClose('10:00')" style="width: 100%;">11:00
+                                am</button>
+                        </div>
+                    </div>
+                    <div class=" row m-2 m-md-1 mb-md-4 mb-sm-4 mb-lg-2">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                            <button mat-stroked-button class="px-sm-3 py-sm-3 body2-500 mb-2"
+                                (click)="gotoClose('10:00')" style="width: 100%;">11:30
+                                am</button>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                            <button mat-stroked-button class="px-sm-3 py-sm-3 body2-500 mb-2"
+                                (click)="gotoClose('10:00')" style="width: 100%;">12:00
+                                pm</button>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                            <button mat-stroked-button class="px-sm-3 py-sm-3 body2-500 mb-2"
+                                (click)="gotoClose('10:00')" style="width: 100%;">12:30
+                                pm</button>
+                        </div>
+                    </div>
+                    <div class=" row m-2 m-md-1 mb-md-4 mb-sm-4 mb-lg-2">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                            <button mat-stroked-button class="px-sm-3 py-sm-3 body2-500 mb-2"
+                                (click)="gotoClose('10:00')" style="width: 100%;">01:00
+                                pm</button>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                            <button mat-stroked-button class="px-sm-3 py-sm-3 body2-500 mb-2"
+                                (click)="gotoClose('10:00')" style="width: 100%;">01:30
+                                pm</button>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                            <button mat-stroked-button class="body2-500 mb-2"
+                                (click)="gotoClose('10:00')" style="width: 100%;">02:00
+                                pm</button>
+                        </div>
+                    </div>
+                    <div class=" row m-2 m-md-1 mb-md-4 mb-sm-4 mb-lg-2">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                            <button mat-stroked-button class="body2-500 mb-2"
+                                (click)="gotoClose('10:00')" style="width: 100%;">02:30
+                                pm</button>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                            <button mat-stroked-button class="body2-500 mb-2"
+                                (click)="gotoClose('10:00')" style="width: 100%;">03:00
+                                pm</button>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                            <button mat-stroked-button class="body2-500 mb-2"
+                                (click)="gotoClose('10:00')" style="width: 100%;">03:30
+                                pm</button>
+                        </div>
+                    </div>
+                    <div class=" row m-2 m-md-1 mb-md-3 mb-sm-4 mb-lg-2">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                            <button mat-stroked-button class="body2-500 mb-2"
+                                (click)="gotoClose('10:00')" style="width: 100%;">04:00
+                                pm</button>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                            <button mat-stroked-button class="body2-500 mb-2"
+                                (click)="gotoClose('10:00')" style="width: 100%;">04:30
+                                pm</button>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                            <button mat-stroked-button class="body2-500 mb-2"
+                                (click)="gotoClose('10:00')" style="width: 100%;">05:00
+                                pm</button>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

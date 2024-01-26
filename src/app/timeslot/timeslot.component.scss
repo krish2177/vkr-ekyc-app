@@ -1,0 +1,9 @@
+.btn {
+    width: 148px;
+    height: 47px;
+}
+
+::ng-deep .mat-calendar-body-selected {
+    background-color: #ae285d !important;
+    color: white !important;
+}

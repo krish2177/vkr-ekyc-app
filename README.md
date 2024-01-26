@@ -1,1 +1,1 @@
-# vkr-ekyc-app
+# vkr-ekyc-demo

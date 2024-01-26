@@ -1,0 +1,389 @@
+/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@import "./theme.scss";
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Poppins;
+}
+
+.full-width {
+    width: 1903px;
+}
+
+$primary: mat.get-color-from-palette($my-app-primary);
+$accent: mat.get-color-from-palette($my-app-accent);
+$warn: mat.get-color-from-palette($my-app-warn);
+
+h1,
+.h1 {
+    font-family: Poppins;
+    font-size: 96px;
+    font-weight: lighter;
+    line-height: 1.3;
+}
+
+h2,
+.h2 {
+    font-family: Poppins;
+    font-size: 60px;
+    font-weight: lighter;
+    line-height: 1.3;
+}
+
+h3,
+.h3 {
+    font-family: Poppins;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.h3-500 {
+    font-family: Poppins;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.h3-normal {
+    font-family: Poppins;
+    font-size: 48px;
+    font-weight: normal;
+    line-height: 1.3;
+}
+
+h4,
+.h4 {
+    font-family: Poppins;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.h4-500 {
+    font-family: Poppins;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.h4-400 {
+    font-family: Poppins;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.sub1 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.sub-500 {
+    font-family: Poppins;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.sub1-500 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.sub1-400 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.sub2 {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.sub2-500 {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.sub2-400 {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.sub2-300 {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.sub3 {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.sub3-500 {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.sub3-400 {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.sub3-300 {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.body1 {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0%;
+}
+
+.body1-500 {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.body1-400 {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.body1-300 {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.body2 {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+
+}
+
+.body2-500 {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0%;
+}
+
+.body2-400 {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.body2-300 {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.body3 {
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0%;
+}
+
+.body3-500 {
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0%;
+}
+
+.body3-400 {
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.color-1 {
+    color: #252525;
+}
+
+.color-2 {
+    color: #626262;
+}
+
+.color-3 {
+    color: #8D8D8D;
+}
+
+.color-4 {
+    color: #E7E7E7;
+}
+
+.opc-5 {
+    opacity: 0.55;
+}
+
+.opc-6 {
+    opacity: 0.66;
+}
+
+.opc-7 {
+    opacity: 0.77;
+}
+
+.opc-8 {
+    opacity: 0.88;
+}
+
+.opc-9 {
+    opacity: 0.99;
+}
+
+.spc-0 {
+    padding: 0;
+    margin: 0;
+}
+
+.spc-4 {
+    padding: 0 0 4px 0;
+}
+
+.spc-8 {
+    padding: 0 0 8px 0;
+}
+
+.spc-16 {
+    padding: 0 0 16px 0;
+}
+
+.spc-24 {
+    padding: 0 0 24px 0;
+}
+
+.spc-32 {
+    padding: 0 0 32px 0;
+}
+
+.spc-40 {
+    padding: 0 0 40px 0;
+}
+
+.spc-48 {
+    padding: 0 0 48px 0;
+}
+
+.spc-56 {
+    padding: 0 0 56px 0;
+}
+
+.spc-64 {
+    padding: 0 0 64px 0;
+}
+
+.spc-72 {
+    padding: 0 0 72px 0;
+}
+
+.pd-0 {
+    padding: 0 0 0 0 !important;
+}
+
+.pad-top-10 {
+    padding: 10px 0 0 0 !important;
+}
+
+.f-w-330 {
+    width: 330px;
+}
+
+.f-w-360 {
+    width: 360px;
+}
+
+.close-icon {
+    font-size: 30px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
+
+.model-position {
+    position: relative;
+    top: 20%;
+}
+
+@supports ((backdrop-filter: blur(15px))) {
+    .bottomSheetBG {
+        -webkit-backdrop-filter: blur(15px);
+        background-color: mat.get-color-from-palette($my-app-primary, 200);
+        backdrop-filter: blur(15px);
+    }
+}
+
+@supports not ((backdrop-filter: blur(15px))) {
+    .bottomSheetBG {
+        backdrop-filter: blur(15px);
+        background-color: mat.get-color-from-palette($my-app-primary, 200);
+    }
+}
+
+.mat-mdc-radio-button .mdc-radio {
+    padding: 10px 10px 10px 0px !important;
+}
+
+.mdc-form-field>label {
+    margin-right: 10px !important;
+}
+
+.w-730 {
+    width: 730px;
+}
+
+.mx-2 {
+    margin-top: 8px;
+}
+
+.icon-32 {
+    font-size: 32px !important;
+    height: 32px !important;
+    width: 32px !important;
+}
+
+.icon-40 {
+    font-size: 40px !important;
+    height: 44px !important;
+    width: 44px !important;
+}
+
+.icon-65 {
+    font-size: 65px !important;
+    height: 65px !important;
+    width: 65px !important;
+}

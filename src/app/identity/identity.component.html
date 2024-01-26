@@ -1,0 +1,214 @@
+<div class="container-fluid">
+    <div style="text-align: left;">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-7">
+                <div class="m-xxl-5 m-xl-5 m-lg-5 m-md-5 m-sm-3 m-xs-2">
+                    <div class="pt-5">
+                        <p class="sub-500">We’re excited to have you here</p>
+                        <p class="sub1-400">Let’s start your KYC process</p>
+                        <div class="col-xs-12 col-lg-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12 p-5 border rounded"
+                            style="margin-bottom: 100px;">
+                            <p class="sub2-500 color-1">Verify your identity</p>
+                            <p class="body2-400 color-3">Fill the details to complete the verification</p>
+                            <div class="row">
+                                <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                                    <div class="m-2">
+                                        <div class="body2-400 spc-8 color-3">Mobile Number *</div>
+                                        <mat-form-field appearance="outline" style="width: 100%;">
+                                            <input matInput [(ngModel)]="mobile" placeholder="+91 9987654321">
+                                            <mat-hint class="body3-400 color-2" style="margin-left: -16px;">
+                                                <i class="bi bi-exclamation-circle"></i>
+                                                Registered with PAN</mat-hint>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                    <div class="m-2">
+                                        <div class="body2-400 spc-8 color-3">PAN *</div>
+                                        <mat-form-field appearance="outline" style="width: 100%;">
+                                            <input matInput [(ngModel)]="panCard" placeholder="E.g ABCDE2451F">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-check mb-3">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" [(ngModel)]="hasAllowed" type="checkbox"
+                                        name="remember" color="accent">
+                                    <span class=" ms-2 body2-400 color-1">I agree to the Axis bank Terms & Conditions
+                                        <br> &nbsp;
+                                        and allow the bank to pull my data
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="w-100 ">
+                                <div class="d-flex p-3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-lg-5" style="background-color:rgb(250,243,246); height: 87vh;">
+            <p class="sub1-500 mt-5" style="color: #97144D;">Benefits of doing Video KYC</p>
+            <div class="row col-10 p-3"
+                style="background-color: white;border-radius: 0px 50px 50px 0px; margin-left: -10px;">
+                <div class="col-2">
+                    <img src="../../../assets/vector.svg" alt="" id="img"
+                        style="cursor: pointer;background-color: rgb(250,243,246);" height="37px" >
+                </div>
+                <div class="col">
+                    <span class="body1-400">Allows remote verification, eliminating
+                        <br>
+                         the need for physical visits.</span>
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="col-2">
+                    <img src="../../../assets/Group.svg" alt="" id="img" style="cursor: pointer;background-color: rgb(250,243,246);" height="30px">
+                </div>
+                <div class="col">
+                    <p>Allows remote verification, eliminating the need for physical visits.</p>
+                </div>
+            </div>
+            <div class="row col-9 p-3"
+                style="background-color: white;border-radius: 0px 50px 50px 0px; margin-left: -10px;">
+                <div class="col-2">
+                    <img src="../../../assets/Group.svg" alt="" id="img"
+                        style="cursor: pointer;background-color: rgb(250,243,246);" height="37px" width="37px">
+                </div>
+                <div class="col">
+                    <span class="body1-400">Easily integrates into digital platforms 
+                        <br>
+                        for seamless onboarding.</span>
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="col-2">
+                    <img src="../../../assets/Group.svg" alt="" id="img" style="cursor: pointer;background-color: rgb(250,243,246);" height="30px">
+                </div>
+                <div class="col">
+                    <p>Allows remote verification, eliminating the need for physical visits.</p>
+                </div>
+            </div>
+            <div class="row col-8 p-3"
+                style="background-color: white;border-radius: 0px 50px 50px 0px; margin-left: -10px;">
+                <div class="col-2">
+                    <img src="../../../assets/Threat_Search.svg" alt="" id="img"
+                        style="cursor: pointer;background-color: rgb(250,243,246);" height="37px" width="37px">
+                </div>
+                <div class="col">
+                    <span class="body1-400">Reduces identity theft and fraud risks
+                        <br> 
+                        through real-time verification.</span>
+                </div>
+            </div>
+        </div> -->
+            <div class="col-xxl-5 col-xl-12 col-lg-12">
+                <div class="d-none d-xxl-block">
+                    <div style="background-color:rgb(250,243,246); height: 87vh;padding: 1px 50px 0px 50px;position: relative;">
+                        <div style="background-color: white;border-radius: 18px;" class="m-sm-5 m-xs-5">
+                            <div class="ms-4 mt-5 mx-lg-5 mx-md-5">
+                                <img src="../../../assets/axisAha.svg" alt="" id="img"
+                                    style="cursor: pointer;background-color: rgb(250,243,246);" height="60px"
+                                    class="mt-4">
+                            </div>
+                            <hr>
+                            <div>
+                                <div class="ms-4 mt-2 mx-lg-5 mx-md-5">
+                                    <span class="txtcolor sub-500">Instant KYC using Axis <br> Bank Digital</span>
+                                </div>
+                                <br>
+                                <div class="ms-4 mt-2 mx-lg-5 mx-md-5">
+                                    <span class="body1-400">Complete paperless onboarding using Video KYC <br>
+                                        Access to 250+ banking services, digitally</span>
+                                </div>
+                                <img src="../../../assets/Illustration.svg" alt="" id="img" style="cursor: pointer;"
+                                    class="mt-4 img-width">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer-style">
+    <div class="container-fluid">
+        <div class="row p-3">
+            <div align="start" class="col">
+                <button mat-button color="accent" class="body2-400">Back</button>
+            </div>
+            <div align="end" class="col">
+                <button mat-raised-button color="accent" data-bs-toggle="modal" data-bs-target="#myModal"
+                    [disabled]="!hasAllowed">Confirm</button>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="modal" id="myModal" style="text-align: left;">
+    <div class="modal-dialog modal-lg-6 modal-xs-12 modal-sm-12 modal-md-8 modal-xl-6 modal-xxl-6 model-position">
+        <div class="modal-content p-3">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <p class="sub1-500 color-1 spc-0"> OTP Verification </p>
+                <mat-icon class="close-icon icon-32" color='accent' data-bs-dismiss="modal">close</mat-icon>
+            </div>
+            <div class="modal-body text-center lightcolor">
+                <p class="body1-400 color-3">An OTP was sent to your register mobile <br> number, please enter it below
+                </p>
+                <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
+                <div class=" mt-4 mb-3">
+                    <button mat-flat-button color="accent" class="btn px-5 body2-500" data-bs-toggle="modal"
+                        data-bs-target="#myModal1"> Continue </button>
+                </div>
+                <p>Didn’t receive the OTP? <a href="#" class="fw-bold" style="color: #97144D;">Click to resend</a> </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal1">
+    <div class="modal-dialog modal-lg-6 modal-xs-12 modal-sm-12 modal-md-8 modal-xl-6 modal-xxl-6 model-position">
+        <div class="modal-content p-3">
+            <div class="modal-body">
+                <div class="text-center ">
+                    <p class="fs-4 fw-bold sub1-500 color-1">Your mobile number has been successfully verified</p>
+                    <!-- <p><i class="bi bi-check2-circle" style="font-size: 70px; color:limegreen"></i></p> -->
+                    <mat-icon color="accent" style="font-size: 60px;width: 60px; height: 60px;">verified</mat-icon>
+                    <p class="body2-400 color-3">Please help us by selecting appropriate <b
+                            style="color: #ae285d;">GSTIN</b>,<br> linked with your businesss</p>
+                </div>
+                <hr>
+                <div class="">
+                    <!-- <p class="lightcolor">Select any one of them</p> -->
+                    <div class="d-flex flex-column py-2 px-5">
+                        <mat-radio-group [(ngModel)]="gstnNum">
+                            <mat-radio-button value="XXXXXXXXXXX6699"
+                                class="body2-400 color-2">XXXXXXXXXXX6699</mat-radio-button>
+                            <mat-radio-button value="XXXXXXXXXXX7788"
+                                class="body2-400 color-2">XXXXXXXXXXX7788</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <div class="d-flex ">
+                    <div class="px-3">
+                        <a href="#" class="btn px-3 body2-400" style="color: #ae285d;" data-bs-dismiss="modal"> Back</a>
+                    </div>
+                    <div class="ms-auto">
+                        <button type="button" mat-flat-button color="accent" class="btn px-3 body2-500"
+                            data-bs-dismiss="modal" (click)="gotoOnboarding(null)" *ngIf="!gstnNum"> Skip </button>
+                        <button type="button" mat-flat-button color="accent" class="btn px-3 body2-500"
+                            data-bs-dismiss="modal" *ngIf="gstnNum" (click)="gotoOnboarding(gstnNum)"> Confirm </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

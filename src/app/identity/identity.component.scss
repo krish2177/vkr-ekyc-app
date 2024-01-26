@@ -1,0 +1,109 @@
+.header {
+    width: 100%;
+    background-color: #f8f8f8;
+
+}
+
+.sidebox {
+    width: 270px;
+    background-color: #f8f8f8;
+
+}
+
+.mainbox {
+    width: 915PX;
+    height: 592px;
+}
+
+.roadway {
+    height: 100px;
+
+}
+
+.pos-l-25 {
+    position: absolute;
+    left: 6%;
+}
+
+.lightcolor {
+    position: relative;
+    right: 22px;
+}
+
+.footer {
+    width: 174px;
+    height: 54px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #CACACA;
+    background-color: #CACACA;
+}
+
+.otpbox {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #222;
+    margin: 4px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.modal-title {
+    font-size: 45px;
+}
+
+.form-check-input:checked {
+    background-color: #ae285d;
+    border-color: #ae285d;
+}
+
+.footer-style {
+    background: #FFF;
+    height: 70px;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.10);
+}
+
+.txtcolor {
+    color: #97144D;
+}
+
+.right-side-img {
+    position: relative;
+    left: 12px;
+    background-color: rgb(250, 243, 246);
+    height: 87vh;
+    padding: 0px 50px 0px 50px;
+}
+@media screen and (min-device-width: 75px) and (max-device-width: 575px) {
+    .img-width {
+        width: 100%;
+    }
+}
+@media screen and (min-device-width: 575px) and (max-device-width: 768px) {
+    .img-width {
+        width: 100%;
+    }
+}
+@media screen and (min-device-width: 768px) and (max-device-width: 960px) {
+    .img-width {
+        width: 100%;
+    }
+}
+@media screen and (min-device-width: 960px) and (max-device-width: 1200px) {
+    .img-width {
+        width: 100%;
+    }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+    .img-width {
+        width: 100%;
+    }
+}
+@media screen and (min-device-width: 1400px) and (max-device-width: 1920px) {
+    .img-width {
+        width: 100%;
+    }
+}

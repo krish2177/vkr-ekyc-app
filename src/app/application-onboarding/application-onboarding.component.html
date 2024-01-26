@@ -1,0 +1,819 @@
+<div class="container-fluid" style="text-align: left;">
+  <div class="row">
+    <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6 col-md-12 col-lg-12 col-xl-12 col-xxl-7">
+      <mat-stepper #stepper [linear]="isLinear" labelPosition="bottom" class="bg-none"
+        (selectionChange)="onStepChange($event)" color="accent" [disableRipple]="true">
+        <ng-template matStepperIcon="edit" matStepLabel>
+          {{stepper.selectedIndex+1}}
+        </ng-template>
+        <mat-step>
+          <ng-template matStepLabel matStepperIcon="business">
+            <span class="sub2-400">Business Details </span>
+          </ng-template>
+          <div class="m-xxl-5 m-xl-5 m-lg-5 m-md-5 m-sm-2 m-xs-2" style="margin-bottom: 110px;">
+            <p class="sub2-500 color-1 spc-16">Business Details</p>
+            <p class="body2-400">Fill the details to complete the verification</p>
+            <div
+              class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+              <div class="m-2">
+                <div class="body2-400 spc-8 color-3">GSTN</div>
+                <mat-form-field appearance="outline" style="width: 100%;">
+                  <input matInput [(ngModel)]="gstnDetails.gstn" [disabled]="disableMode">
+                </mat-form-field>
+              </div>
+            </div>
+            <div
+              class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+              <div>
+                <mat-checkbox class="chkImageBox" name="noGstn" color="accent" [(ngModel)]="hasGstn" #noGstn=ngModel>
+                  <span class="body2-400">I don’t have GSTIN</span>
+                </mat-checkbox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3">Legal Business Name*</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <input matInput [(ngModel)]="gstnDetails.legalName" [disabled]="disableMode">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3">Business Entity*</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-select name="stType" [(ngModel)]="gstnDetails.businessEntity" [disabled]="disableMode "
+                      placeholder="Select">
+                      <mat-option id="sso" [value]=null>Select</mat-option>
+                      <mat-option id="sdtld" value="PUBLIC">Public</mat-option>
+                      <mat-option id="snone" value="PRIVATE">Private</mat-option>
+                      <mat-option id="ssum" value="COMPANY">Company</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3">Trading Business Name*</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <input matInput [(ngModel)]="gstnDetails.tradingBusinessName">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3">Business Turnover*</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-select name="stType" [(ngModel)]="gstnDetails.businessTurnover" [disabled]="disableMode"
+                      placeholder="Select">
+                      <mat-option id="sso" [value]=null>Select</mat-option>
+                      <mat-option id="sdtld" value="20">More than 20 Lakhs</mat-option>
+                      <mat-option id="snone" value="10">Less than 10 Lakhs</mat-option>
+                      <mat-option id="ssum" value="50">More than 50 Lakhs</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3">Business Description Type*</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <input matInput [(ngModel)]="gstnDetails.businessDescType" [disabled]="disableMode">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3">Occupation Code*</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <input matInput [(ngModel)]="gstnDetails.occupationCode" [disabled]="disableMode">
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <p class="body1-500">Registered Address</p>
+            <div class="row">
+              <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3">Pincode*</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <input matInput [(ngModel)]="gstnDetails.pincode">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3">State*</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <input matInput [(ngModel)]="gstnDetails.state">
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3">City*</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <input matInput [(ngModel)]="gstnDetails.city">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3">District*</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <input matInput [(ngModel)]="gstnDetails.district">
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div style="margin-left: -8px;">
+              <mat-checkbox class="chkImageBox" name="noGstn" color="accent" [(ngModel)]="hasSameAddr" #noGstn=ngModel>
+                <span class="body2-400">Installation address same as registered address</span>
+              </mat-checkbox>
+            </div>
+            <p class="body1-500">Installation Address</p>
+            <div class="row">
+              <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3">Pincode*</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <input matInput [(ngModel)]="gstnDetails.pincode">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3">State*</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <input matInput [(ngModel)]="gstnDetails.state">
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-5">
+              <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3">City*</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <input matInput [(ngModel)]="gstnDetails.city">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3">District*</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <input matInput [(ngModel)]="gstnDetails.district">
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel matStepperIcon="account_circle">
+            <span class="sub2-400">Owner Details </span>
+          </ng-template>
+          <div class="m-xxl-5 m-xl-5 m-lg-5 m-md-5 m-sm-2 m-xs-2" style="margin-bottom: 110px;">
+            <div *ngIf="showOwnerDetails">
+              <p class="sub2-500 color-1 spc-16">Owner Details</p>
+              <p class="body2-400">Enter your details as they appear as on identification</p>
+              <div class="row">
+                <div class="col-xs-12 col-sm-10 col-md-10">
+                  <div class="m-2">
+                    <div class="body2-400 spc-8 color-3">Enter Aadhar Number*</div>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <input matInput [(ngModel)]="ownerDetails.aadhar">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="col-sm-2 col-md-2">
+                  <div class="m-2">
+                    <button mat-button type="button" class="px-5 sub2-400" color="accent" data-bs-toggle="modal"
+                      data-bs-target="#aadharotpmodel" *ngIf="showOwnerDetails" (click)="verifyDocument()"> Verify
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="!showOwnerDetails">
+              <p class="sub2-500 color-1 spc-16">Verify your details</p>
+              <div
+                class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <div class="body2-400 spc-8 color-3"> Aadhar Number*</div>
+                <mat-form-field appearance="outline" style="width: 100%;">
+                  <input matInput placeholder="XXXX XXXX 6699" [(ngModel)]="ownerDetails.aadhar" disabled>
+                </mat-form-field>
+              </div>
+              <div
+                class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3"> Full Name</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <input matInput placeholder="E.g" [(ngModel)]='ownerDetails.name' name="name">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-6 col-lg-6 col-sm-6 col-md-6 col-xl-6 col-xxl-6">
+                  <div class="m-2">
+                    <div class="body2-400 spc-8 color-3">Gender*</div>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <input matInput [(ngModel)]='ownerDetails.gender' name="gender">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-lg-6 col-sm-6 col-md-6 col-xl-6 col-xxl-6">
+                  <div class="m-2">
+                    <div class="body2-400 spc-8 color-3">Date of Birth*</div>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <input matInput [matDatepicker]="installDatePicker" [(ngModel)]='ownerDetails.dob'
+                        name="preferredDateToInstallValue" #preferredDateToInstallValue='ngModel' required readonly
+                        (mousedown)="installDatePicker.open();$event.preventDefault()">
+                      <mat-datepicker-toggle matSuffix [for]="installDatePicker"></mat-datepicker-toggle>
+                      <mat-datepicker #installDatePicker></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <p class="body1-400 spc-0">Add profile photo</p>
+              <mat-hint class="lightcolor mt-3 mb-3 body3-400 color-2"> <i class="bi bi-exclamation-circle"></i>
+                Note: Supported formats PNG,JPG,SVG and Max size 5MB</mat-hint>
+              <p class="body2-400"></p>
+              <div class="mainbox p-5 " style="border: dotted; color: #97144D4F; text-align: center;">
+                <div *ngIf="!hasProfileUploaded">
+                  <p style="font-size:70px;"><img src="../../assets/cloudicon.svg" alt=""></p>
+                  <button type="button" mat-flat-button color="accent" class="btn px-3 body2-500" (click)="i2.click()">
+                    <input hidden type="file" accept="image/*" #i2 ngDefaultControl
+                      (change)="uploadProfilePic($event)" /> Upload Here
+                  </button><br>
+                  <span class="body1-500">{{profilePicName}}</span>
+                  <br>
+                  <p class="body1-400">or</p>
+                  <button type="button" mat-stroked-button color="accent" class="btn px-3 body2-500"
+                    (click)="openCamera()">
+                    Take Photo
+                  </button>
+                </div>
+                <div class="m-5" *ngIf="hasProfileUploaded">
+                  <div class="ms-auto">
+                    <mat-icon class="close-icon profile-img-del" color='accent'
+                      (click)="deleteUploadedDoc('PROFILE')">cancel</mat-icon>
+                    <img [src]="profilePicUrl" alt="" width="300" height="300"
+                      style="border-radius: 50%;border: 1px dashed #ae285d;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel matStepperIcon="monetization_on">
+            <span class="sub2-400">POS Details</span>
+          </ng-template>
+          <!-- add code here -->
+          <div class="m-xxl-5 m-xl-5 m-lg-5 m-md-5 m-sm-2 m-xs-2" style="margin-bottom: 110px;">
+            <p class="sub2-500 color-1 spc-16">POS Details</p>
+            <p class="body2-500 spc-16">Select POS</p>
+            <div class="row">
+              <div class="col-xs-2 col-sm-3 col-md-2 col-lg-2">
+                <button style="height: 132px;border: 1px solid #97144D;width: 100%; " class=" btn rounded-large"
+                  mat-stroked-button color="accent">
+                  <img src="../../assets/pos_icon_bg.svg" alt="" style="width: 100%;" class="mx-auto mt-3 mb-3">
+                  <div class="text-center">
+                    <p class="body2-400">Andriod <br>POS</p>
+                  </div>
+                </button>
+              </div>
+              <div class="col-xs-2 col-sm-3 col-md-2 col-lg-2">
+                <button style="height: 132px;width: 100%;" class="btn rounded-large" mat-stroked-button>
+                  <img src="../../assets/pos_icon_bg.svg" alt="" style="width: 100%;" class="mx-auto mt-3 mb-3">
+                  <div class="text-center">
+                    <p class="body2-400">Andriod <br>POS + QR</p>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div class="body2-400 mt-4 spc-8">Select number of POS</div>
+            <div class="col-xs-12 col-lg-6 col-sm-12 col-md-12 col-xl-12 col-xxl-12">
+              <mat-form-field appearance="outline" style="width: 100%;">
+                <mat-select name="stType" [(ngModel)]="businessEntity" placeholder="Select">
+                  <mat-option [value]="null"> Select </mat-option>
+                  <mat-option value="1"> 1 </mat-option>
+                  <mat-option value="2">2 </mat-option>
+                  <mat-option value="3"> 3 </mat-option>
+                  <mat-option value="4">4</mat-option>
+                  <mat-option value="5"> 5</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-lg-12 col-sm-12 col-md-12 col-xl-6 col-xxl-6">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3">Estimated Monthly card volume</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-select name="stType" placeholder="Select">
+                      <mat-option [value]="null"> Select </mat-option>
+                      <mat-option value="1"> 1 Lakh</mat-option>
+                      <mat-option value="2">2 Lakhs</mat-option>
+                      <mat-option value="3"> 3 Lakhs</mat-option>
+                      <mat-option value="4">4 Lakhs</mat-option>
+                      <mat-option value="5"> 5 Lakhs</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-xs-12 col-lg-12 col-sm-12 col-md-12 col-xl-6 col-xxl-6">
+                <div class="m-2">
+                  <div class="body2-400 spc-8 color-3">Average Ticket Size</div>
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <input matInput>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <p class="body1-400" align="start">Financial Information</p>
+              </div>
+              <div class="col-6">
+                <a data-bs-toggle="modal" data-bs-target="#posqrmodal" class="tdcolor">
+                  <p class="body2-300 tdcolor" align="end"> Additional Features </p>
+                </a>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div class="card" style="width: 100%;">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col text-center body2-300" style="color: #97144D;background-color: rgb(252,248,249);">
+                        Asset Mode</th>
+                      <th scope="col tdcolor text-center body2-300"
+                        style="color: #97144D;background-color: rgb(252,248,249)">Andriod POS + QR</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="body2-300">MDAB Commitment ( Metro)</th>
+                      <td class="body2-300 tdcolor">Rs 15,000</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="body2-300">MDAB required to 50% rental discount</th>
+                      <td class="body2-300 tdcolor">Rs 25,000 - 1,00,000</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="body2-300">MDAB Commitment ( Metro)</th>
+                      <td class="body2-300 tdcolor">> 1,00,000</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="body2-300">DC MDR (Small merchants and transaction < Rs 2,000)</th>
+                      <td class="body2-300 tdcolor">0.4%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="body2-300">DC MDR transaction > Rs 2,000</th>
+                      <td class="body2-300 tdcolor">0.9%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="body2-300">DC MDR commercial cards</th>
+                      <td class="body2-300 tdcolor">>2.25%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="body2-300">DC MDR international cards</th>
+                      <td class="body2-300 tdcolor">5%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="body2-300">CC MDR retail</th>
+                      <td class="body2-300 tdcolor">1.8%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="body2-300">CC MDR Grocery</th>
+                      <td class="body2-300 tdcolor">> 1.2%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel matStepperIcon="monetization_on">
+            <span class="sub2-400">Bank Details</span>
+          </ng-template>
+          <div class="m-xxl-5 m-xl-5 m-lg-5 m-md-5 m-sm-2 m-xs-2" style="margin-bottom: 110px;">
+            <p class="sub2-500 color-1 spc-16">Please help us to link your bank account</p>
+            <div>
+              <mat-radio-group aria-label="Link a Bank Account">
+                <p class="body2-500 spc-4">Link a Bank Account</p>
+                <mat-radio-button value="1" (change)="radioButtonChange($event)" checked>
+                  IFSC code
+                </mat-radio-button>
+                <mat-radio-button value="2" (change)="radioButtonChange($event)">
+                  Bank Name
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div>
+              <div *ngIf="isIFSCSelected">
+                <div
+                  class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                  <div class="m-2">
+                    <div class="body2-400 spc-8 color-3"> NEFT IFSC code*</div>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <input matInput [(ngModel)]="ifscCode" (change)="onIFSCCodeChange($event)">
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="!isIFSCSelected">
+                <div
+                  class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                  <div class="m-2">
+                    <div class="body2-400 spc-8 color-3"> Bank Name*</div>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <input matInput [(ngModel)]="bankName">
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                  <div class="m-2">
+                    <div class="body2-400 spc-8 color-3"> Select State*</div>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <mat-select name="state" [(ngModel)]="selectedState" (selectionChange)="onStateChange($event)"
+                        placeholder="Select">
+                        <mat-option id="ts" [value]=null>Select a State</mat-option>
+                        <mat-option *ngFor="let state of states" [value]="state.name">
+                          {{state.value}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                  <div class="m-2">
+                    <div class="body2-400 spc-8 color-3"> Select City*</div>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <mat-select name="city" [(ngModel)]="selectedCity" (selectionChange)="onCityChange($event)"
+                        placeholder="Select">
+                        <mat-option id="ts" [value]=null>Select a City</mat-option>
+                        <mat-option *ngFor="let city of cities" [value]="city.name">
+                          {{city.value}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                  <div class="m-2">
+                    <div class="body2-400 spc-8 color-3"> Select Branch*</div>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <mat-select name="branch" [(ngModel)]="selectedBranch" (selectionChange)="onBranchChange($event)"
+                        placeholder="Select">
+                        <mat-option id="ts" [value]=null>Select a Branch</mat-option>
+                        <mat-option *ngFor="let branch of branches" [value]="branch.name">
+                          {{branch.value}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6" *ngIf="!isIFSCSelected">
+                  <div class="m-2">
+                    <div class="body2-400 spc-8 color-3"> NEFT IFSC code*</div>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <input matInput [(ngModel)]="ifscCode">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6" *ngIf="isIFSCSelected">
+                  <div class="m-2">
+                    <div class="body2-400 spc-8 color-3"> Bank Name*</div>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <input matInput [(ngModel)]="bankName">
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                  <div class="m-2">
+                    <div class="body2-400 spc-8 color-3"> Bank Account Holder Name*</div>
+                    <mat-form-field appearance="outline" style="width:100%">
+                      <input matInput>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-lg-6 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                  <div class="m-2">
+                    <div class="body2-400 spc-8 color-3"> Bank Account Number*</div>
+                    <mat-form-field appearance="outline" style="width:100%">
+                      <input matInput>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <p class="body2-400 mb-5" style="width:100%;"> Remember to double check your account number. Banks may not
+                flag
+                error until transaction happens.</p>
+            </div>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel matStepperIcon="monetization_on">
+            <span class="sub2-400">Video KYC</span>
+          </ng-template>
+          <div class="m-xxl-5 m-xl-5 m-lg-5 m-md-5 m-sm-2 m-xs-2" style="margin-bottom: 110px;">
+            <div style="text-align: left;">
+              <p class="fw-bold mt-4 mb-3">Quick check before you start</p>
+              <div class="row mt-5">
+                <div class="col-2 dot">
+                  <img src="../../../assets/panIcon1.svg" alt="" id="img" style="cursor: pointer;" height="36px">
+                </div>
+                <div class="col-10">
+                  <p class="mx-2">Original PAN Card ready</p>
+                </div>
+              </div>
+              <div class="row mt-5">
+                <div class="col-2 dot">
+                  <img src="../../../assets/wifi1.svg" alt="" id="img" style="cursor: pointer;" height="36px">
+                </div>
+                <div class="col-10">
+                  <p class="mx-2">4G/WIFI internet</p>
+                </div>
+              </div>
+              <div class="row mt-5">
+                <div class="col-2 dot">
+                  <img src="../../../assets/light1.svg" alt="" id="img" style="cursor: pointer;" height="36px">
+                </div>
+                <div class="col-10">
+                  <p class="mx-2">Well lit and Quiet place</p>
+                </div>
+              </div>
+              <p class="mt-5" style="color: grey;">Note : As per the Axis Bank policy and guidelines, videos will be
+                recorded and <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;images will be captured during the
+                Video KYC process..
+              </p>
+            </div>
+          </div>
+        </mat-step>
+      </mat-stepper>
+    </div>
+    <div class="col-xxl-5 col-xl-12 col-lg-12 right-illustration">
+      <div class="d-none d-xxl-block">
+        <div style="margin-top: 150px;" class="text-center illus-content">
+          <span class="tdcolor sub1-400">Complete your KYC </span><br>
+          <span class="tdcolor sub1-400">to unlock your trading</span>
+        </div>
+        <img src="../../assets/Illustration2.svg" alt="img" class="img-width" [height]="illustrationHight">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="aadharotpmodel">
+  <div class="modal-dialog model-position">
+    <div class="modal-content p-3">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <p class="sub1-500 spc-0">OTP Verification </p>
+        <mat-icon class="close-icon icon-32" color='accent' data-bs-dismiss="modal">close</mat-icon>
+      </div>
+      <div class="modal-body text-center lightcolor">
+        <p class="body1-400 color-3">An OTP was sent to your register mobile<br> number, please enter it below</p>
+        <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
+
+        <div class=" mt-4 mb-3">
+          <button mat-flat-button color="accent" class="btn px-5 body2-500" data-bs-toggle="modal"
+            data-bs-target="#myModal1" (click)="getOwnerDetails()"> Continue </button>
+        </div>
+
+        <p class="body2-400">Didn’t receive the OTP? <a href="#" class="tdcolor">Click to resend</a> </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+<footer class="footer-style">
+  <div class="container-fluid">
+    <div class="row p-3">
+      <div align="start" class="col">
+        <button mat-button color="accent" (click)="goBack(stepper)" class="body2-400">Back</button>
+      </div>
+      <div align="end" class="col" *ngIf="selectedIndex ==0">
+        <button mat-raised-button color="accent" (click)="goForward(stepper)" class="body2-500">Proceed</button>
+      </div>
+      <div align="end" class="col" *ngIf="selectedIndex ==1 && hideProceedBtn">
+        <button mat-raised-button color="accent" (click)="goForward(stepper)" class="body2-500">Proceed</button>
+      </div>
+      <div align="end" class="col" *ngIf="selectedIndex ==2">
+        <button mat-raised-button color="accent" (click)="goForward(stepper)" class="body2-500">Proceed</button>
+      </div>
+      <div align="end" class="col" *ngIf="selectedIndex ==3">
+        <button mat-raised-button color="accent" data-bs-toggle="modal" data-bs-target="#myModal2"
+          class="body2-500">Proceed</button>
+      </div>
+      <div align="end" class="col" *ngIf="selectedIndex ==4">
+        <button mat-raised-button color="accent" data-bs-toggle="modal" data-bs-target="#myModal4" (click)="countDown()"
+          class="body2-500">Proceed with Video KYC</button>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- <footer class="footer-style">
+      <div class="d-flex align-items-center" style="padding: 20px 60px;">
+        <div class="d-inline-block">
+          <button mat-button color="accent" (click)="goBack(stepper)" class="body2-400">Back</button>
+        </div>
+        <div class="d-inline-block" style="position: absolute;right: 2%;" *ngIf="selectedIndex ==0">
+          <button mat-raised-button color="accent" (click)="goForward(stepper)" class="body2-500">Proceed</button>
+        </div>
+        <div class="d-inline-block" style="position: absolute;right: 2%;" *ngIf="selectedIndex ==1 && hideProceedBtn">
+          <button mat-raised-button color="accent" (click)="goForward(stepper)" class="body2-500">Proceed</button>
+        </div>
+        <div class="d-inline-block" style="position: absolute;right: 2%;" *ngIf="selectedIndex ==2">
+          <button mat-raised-button color="accent" (click)="goForward(stepper)" class="body2-500">Proceed</button>
+        </div>
+
+        <div class="d-inline-block" style="position: absolute;right: 2%;" *ngIf="selectedIndex ==3">
+          <button mat-raised-button color="accent" data-bs-toggle="modal" data-bs-target="#myModal2"
+            class="body2-500">Proceed</button>
+        </div>
+        <div class="d-inline-block" style="position: absolute;right: 2%;" *ngIf="selectedIndex ==4">
+          <button mat-raised-button color="accent" data-bs-toggle="modal" data-bs-target="#myModal4"
+            (click)="countDown()" class="body2-500">Proceed with Video KYC</button>
+        </div>
+      </div>
+    </footer> -->
+<div class="modal" id="myModal2">
+  <div class="modal-dialog modal-xs-12 modal-sm-12 modal-md-12 modal-lg-12 modal-lg-8  model-position">
+    <div class="modal-content p-3" *ngIf="!hasUploaded">
+      <div class="modal-header">
+        <p class="fs-4 fw-bold col-4 sub1-500 color-1">E-consent</p>
+        <mat-icon class="close-icon" color='accent' style="width: 60px;" data-bs-dismiss="modal">close</mat-icon>
+      </div>
+      <div class="modal-body">
+        <p class="body1-400 color-2">Please sign on any white paper and upload it below</p>
+        <mat-hint class="lightcolor mt-3 mb-3 body3-400 color-2" style="position: relative;top: -16px;"> <i
+            class="bi bi-exclamation-circle"></i>
+          Note: Supported formats PNG,JPG,SVG and Max size 5MB</mat-hint>
+        <div class="card ">
+          <p class="sub1-500 col-12 mt-5 text-center color-1">Drag & Drop Signature</p>
+          <p class="body2-400 text-center"> or </p>
+          <br>
+          <div class="mt-2 text-center mb-5">
+            <button type="button" mat-flat-button color="accent" class="btn px-3 body2-500" (click)="i1.click()">
+              <input hidden type="file" accept="image/*" #i1 ngDefaultControl (change)="uploadFile($event)" />
+              Upload Here
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="mx-3">
+        <div class="form-check mb-3">
+          <label class="form-check-label">
+            <input class="form-check-input" [(ngModel)]="haskyc" type="checkbox" name="remember" color="accent">
+            <p class="body2-400 color-3">I have read the foregoing information, or it has been read to me. I have
+              had the opportunity to ask questions about it and questions that I have asked have been
+              answered to my satification. I consent volutarily as a partipant in this KYC
+            </p>
+          </label>
+        </div>
+        <div class="d-flex ">
+          <div class="ms-auto">
+            <button type="button" mat-flat-button color="accent" class="btn px-3 body2-500"
+              (click)="uploadConfirm(true)">
+              Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-content p-3" *ngIf="hasUploaded">
+      <div class="modal-header">
+        <p class="fs-4 fw-bold col-4 sub1-500 color-1">E-consent</p>
+        <mat-icon class="close-icon" color='accent' style="width: 60px;" data-bs-dismiss="modal">close</mat-icon>
+      </div>
+      <div class="modal-body">
+        <p class="body1-400 color-2">Please sign on any white paper and upload it below.</p>
+        <div class="card maincard">
+          <div class="m-5">
+            <div class="ms-auto">
+              <mat-icon class="close-icon img-del-icon" color='accent'
+                (click)="deleteUploadedDoc('SIGN')">cancel</mat-icon>
+              <img [src]="uploadDocImageURL" alt="" width="400" height="200" class="imgCard">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mx-3">
+        <div class="form-check mb-3">
+          <label class="form-check-label">
+            <input class="form-check-input" [(ngModel)]="haskyc" type="checkbox" name="remember" color="accent">
+            <p class="body2-400 color-3">I have read the foregoing information, or it has been read to me. I have
+              had the opportunity to ask questions about it and questions that I have asked have been
+              answered to my satification. I consent volutarily as a partipant in this KYC
+            </p>
+          </label>
+        </div>
+        <div class="d-flex ">
+          <div class="ms-auto">
+            <button type="button" mat-flat-button color="accent" class="btn px-3 body2-500" data-bs-dismiss="modal"
+              aria-label="Close" (click)="goForward(stepper)"> Confirm </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="posqrmodal">
+  <div class="modal-dialog modal-lg model-position">
+    <div class="modal-content p-3" style="width: 939px;">
+      <div class="modal-body  lightcolor" style="padding: 48px;">
+        <div class="d-flex spc-24">
+          <p class="fs-2 fw-bold spc-0">Andriod POS + QR Features </p>
+          <mat-icon class="close-icon ms-auto icon-32" color='accent' data-bs-dismiss="modal">close</mat-icon>
+        </div>
+        <p class="body2-400 text-start color-3">Device Features</p>
+        <table class="table table-striped  table-borderless w-100 border rounded-large">
+          <tbody>
+            <tr>
+              <th scope="row" class="body2-300 color-1">Card Transaction</th>
+              <td class="body2-300 tdcolor">Supports all types of card transactions</td>
+            </tr>
+            <tr>
+              <th scope="row" class="body2-300">E - Charge slips</th>
+              <td class="body2-300 tdcolor">Can send Chargeslips over email and SMS</td>
+            </tr>
+            <tr>
+              <th scope="row" class="body2-300">International Transaction Acceptance</th>
+              <td class="body2-300 tdcolor">Accept International cards on POS transactions</td>
+            </tr>
+            <tr>
+              <th scope="row" class="body2-300">Amex</th>
+              <td class="body2-300 tdcolor">Supports AMEX network</td>
+            </tr>
+            <tr>
+              <th scope="row" class="body2-300">BNPL</th>
+              <td class="body2-300 tdcolor">Bill now pay later feature available</td>
+            </tr>
+            <tr>
+              <th scope="row" class="body2-300">EMI on POS</th>
+              <td class="body2-300 tdcolor">Can perform EMI transactions on this POS</td>
+            </tr>
+            <tr>
+              <th scope="row" class="body2-300">DCC</th>
+              <td class="body2-300 tdcolor">Dynamic Currency Conversion available</td>
+            </tr>
+            <tr>
+              <th scope="row" class="body2-300">Bharat QR 4.0 (including UPI)</th>
+              <td class="body2-300 tdcolor">QR code transactions can be processed</td>
+            </tr>
+            <tr>
+              <th scope="row" class="body2-300">Sodexo</th>
+              <td class="body2-300 tdcolor">Sodexo Vouchers accepted at all merchants</td>
+            </tr>
+            <tr>
+              <th scope="row" class="body2-300">Merchant Portal</th>
+              <td class="body2-300 tdcolor">Works at all merchant portals</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<span id="vkyc" data-bs-toggle="modal" data-bs-target="#myModal4"></span>
+<div class="modal" id="myModal4">
+  <div class="modal-dialog model-position">
+    <div class="modal-content p-3">
+      <div class="modal-body">
+        <div class="row">
+          <div class="text-center mb-5">
+            <img src="../../../assets/bank.svg" alt="" id="img" style="cursor: pointer;" height="50px">
+          </div><span class="close-icon" data-bs-dismiss="modal" #myModalClose></span>
+          <p class="body1-400 text-center color-3">All our agents are busy right now<br> your current wait time is
+          </p>
+          <p class="h4 text-center mt-2">{{seconds}} sec</p>
+          <p class="body1-400 text-center">or</p>
+          <div class="text-center mt-3 mb-5">
+            <button type="button" mat-flat-button color="accent" class="btn px-5 body2-500" data-bs-dismiss="modal"
+              (click)="gotoSchedule()">
+              Schedule a call later </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

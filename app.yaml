@@ -1,0 +1,34 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+handlers:
+- url: /
+  static_files: dist/vkr-ekyc-app/index.html
+  upload: dist/vkr-ekyc-app/index.html
+- url: /
+  static_dir: dist/vkr-ekyc-app
+
+skip_files:
+  - e2e/
+  - node_modules/
+  - src/
+  - coverage
+  - ^(.*/)?\..*$
+  - ^(.*/)?.*\.json$
+  - ^(.*/)?.*\.md$
+  - ^(.*/)?.*\.yaml$
+  - ^LICENSE
+# runtime: nodejs16
+
+# instance_class: F2
+
+# env_variables: 
+#   BUCKET_NAME: "vkr-ekyc-app-poc"
+
+# handlers:
+# - url: /
+#   static_files: dist/vkr-ekyc-app/index.html
+#   upload: dist/vkr-ekyc-app/index.html
+
+# - url: /
+#   static_dir: dist/vkr-ekyc-app 

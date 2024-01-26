@@ -1,0 +1,45 @@
+<!-- <div>
+    <div style="width: 760px;padding: 24px 32px;">
+        <span class="sub1-500 color-1">{{ data?.isTakePic ? "Take Picture" : "Video Call"}}</span>
+        <span style="padding-left: 512px;"><mat-icon style="cursor: pointer;font-size: 32px;width: 32px;height: 32px;"
+                color="accent" (click)='closeDialog()'>close</mat-icon></span>
+    </div>
+</div>
+<div style="width: 760px;padding: 0 130px;">
+    <video [class.show]="!isCaptured" [class.hide]="isCaptured" #video id="video" [width]="WIDTH" [height]="HEIGHT" loop
+        muted autoplay></video>
+    <canvas [class.show]="isCaptured" [class.hide]="!isCaptured" #canvas id="canvas" [width]="WIDTH"
+        [height]="HEIGHT"></canvas>
+</div>
+
+<div class="snap-container" fxLayoutGap="16px">
+    <button mat-raised-button color="accent" class="sub2-400" *ngIf="!isCaptured" (click)="capture(data?.isTakePic)">{{
+        data?.isTakePic ? "Take Picture" : "Submit"}}</button> -->
+<!-- <button mat-raised-button color="accent" *ngIf="isCaptured" (click)="removeCurrent()">Take Another</button>
+    <button mat-raised-button color="accent" *ngIf="isCaptured" (click)="submitImg()">submit</button> -->
+<!-- <ul class="list-unstyled">
+        <li *ngFor="let src of captures; let idx = index" (click)="setPhoto(idx)">
+            <img [src]="src" height="50" id="d_{{idx}}" />
+        </li>
+    </ul>
+</div> -->
+<div class="m-3">
+    <span class="sub1-500 color-1">{{ data?.isTakePic ? "Take Picture" : "Video Call"}}</span>
+    <span class="videopadding"><mat-icon style="cursor: pointer;font-size: 32px;width: 32px;height: 32px;"
+            color="accent" (click)='closeDialog()'>close</mat-icon></span>
+</div>
+<div class="col-xs-8 col-xs-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 m-3">
+    <video [class.show]="!isCaptured" [class.hide]="isCaptured" #video id="video" class="videowidth" [height]="HEIGHT"
+        loop muted autoplay></video>
+    <canvas [class.show]="isCaptured" [class.hide]="!isCaptured" #canvas id="canvas" class="videowidth"
+        [height]="HEIGHT"></canvas>
+</div>
+<div class="snap-container" fxLayoutGap="16px">
+    <button mat-raised-button color="accent" class="sub2-400" *ngIf="!isCaptured" (click)="capture(data?.isTakePic)">{{
+        data?.isTakePic ? "Take Picture" : "Submit"}}</button>
+    <ul class="list-unstyled">
+        <li *ngFor="let src of captures; let idx = index" (click)="setPhoto(idx)">
+            <img [src]="src" height="50" id="d_{{idx}}" />
+        </li>
+    </ul>
+</div>
