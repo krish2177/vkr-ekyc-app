@@ -31,3 +31,36 @@ spec:
       port: 80
       targetPort: 80
   type: NodePort
+# ---
+# apiVersion: v1
+# kind: ReplicationController
+# metadata:
+#   name: vkr-ekyc-app-k8s
+# spec:
+#   replicas: 1
+#   template:
+#     metadata:
+#       labels:
+#         app: vkr-ekyc-app-k8s
+#     spec:
+#       containers:
+#       - name: nodeapp-https
+#         image: krishna35java/vkr-ekyc-app
+#         ports:
+#         - containerPort: 8080
+# ---
+# apiVersion: extensions/v1beta1
+# kind: Ingress
+# metadata:
+#   name: vkr-ekyc-app-k8s
+# spec:
+#   tls:
+#   - secretName: node-app-secret
+#   backend:
+#     serviceName: vkr-ekyc-app-k8s
+#     servicePort: 80
+# " | kubectl create -f -
+
+# #Service stop & start commonds
+# $ kubectl scale rc nodeapp-https --replicas=0
+# $ kubectl scale rc nodeapp-https --replicas=1
