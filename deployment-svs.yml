@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vkr-ekyc-app-k8s-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vkr-ekyc-app-k8s
+  template:
+    metadata:
+      labels:
+        app: vkr-ekyc-app-k8s
+    spec:
+      containers:
+      - name: vkr-ekyc-app-k8s
+        image: krishna35java/vkr-ekyc-app
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vkr-ekyc-app-k8s-service
+spec:
+  selector:
+    app: vkr-ekyc-app-k8s
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
